@@ -1,147 +1,145 @@
-@font-face {
-  font-family: "roboto-condense";
-  src: url(/font/roboto-condense/RobotoCondensed-Bold.ttf);
-}
-@font-face {
-  font-family: "roboto-condense-light";
-  src: url(/font/roboto-condense/RobotoCondensed-Light.ttf);
-}
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap");
+
 * {
   margin: 0;
   padding: 0;
-  text-decoration: none;
+  box-sizing: border-box;
   list-style: none;
-  /* border: 1px solid coral; */
+  text-decoration: none;
+}
+:root {
+  --color1: #ffffff;
+  --color2: #1d1d1d;
+  --color3: #0d0d0d;
+  --color4: #474cfe;
 }
 body {
-  background: #0f0f0f;
-  color: #fff;
-  font-family: "roboto-condense-light";
+  overflow-x: hidden;
+  color: var(--color1);
+  background: var(--color2);
+  font-family: "Inter", sans-serif;
+  padding: 10px;
+  min-height: 100vh;
+  user-select: none;
+  cursor: none;
+}
+p {
+  font-size: 0.9rem;
 }
 
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 80px;
-  font-family: "roboto-condense";
-  padding: 0 20px;
-  font-size: 1.5rem;
+  padding: 10px;
 }
 
-nav h2 {
-  cursor: pointer;
-  transition: all 0.5s ease;
-}
-nav h2:hover {
-  transform: scale(1.1);
-  transition: all 0.5s ease;
-}
 nav ul {
   display: flex;
   justify-content: space-around;
-  width: 50%;
-}
-nav ul li {
-  cursor: pointer;
-  width: 120px;
-  text-align: center;
-  transition: all 0.5s ease;
-}
-nav li:hover {
-  transform: scale(1.2);
-  transition: all 0.5s ease;
-}
-section {
-  display: flex;
-  justify-content: space-around;
   align-items: center;
-  min-height: 600px;
+  width: 60%;
 }
-section .div-left {
-  padding: 20px;
-  width: 50%;
+nav a,
+a:visited {
+  color: var(--color1);
+  transition: 0.3s ease;
+  z-index: 1000;
+  position: relative;
 }
-section .div-left h1 {
-  font-size: 5rem;
-  animation-name: animation-left-h1;
-  animation-duration: 2s;
-  animation-timing-function: ease-in-out;
-  animation-direction: 2s;
-  animation-delay: 0s;
-}
-section .div-left h3 {
+a:hover {
+  color: var(--color4);
   font-size: 1.5rem;
-  color: rgb(32, 58, 255);
+  font-weight: bold;
+  transition: 0.3s ease;
 }
-section .div-right {
-  padding: 20px;
+.firstSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 0;
+}
+.firstSection .firstSectionLeft {
+  padding: 10px;
   width: 50%;
 }
-section .div-right img {
-  height: 550px;
-  width: 650px;
-  animation-name: animation-right;
-  animation-duration: 2s;
-  animation-timing-function: ease-in-out;
-  animation-delay: 0s;
+.firstSectionLeft .firstSectionLeftChild {
+  width: 100%;
 }
-
-footer {
-  display: grid;
-  grid-template-columns: 400px 1fr;
-  grid-template-areas:
-    "foot-h4 foot-div-h4"
-    "foot-h4 foot-div-image";
-  background: black;
-  margin: 0 20px;
-  min-height: 200px;
-  border-radius: 10px;
+.firstSectionLeft .firstSectionLeftChild h1 {
+  font-size: 5rem;
+}
+.firstSectionLeft .firstSectionLeftChild h3 {
+  font-size: 1.1rem;
+  color: var(--color4);
+}
+.firstSection .firstSectionRight {
   padding: 10px;
-  margin-bottom: 50px;
-}
-footer .foot-right-top {
-  grid-area: foot-div-h4;
+  width: 50%;
 }
 
-footer .foot-left {
-  grid-area: foot-h4;
-  padding: 20px;
+.firstSection .firstSectionRight img {
+  width: 100%;
+}
+.secondSection {
+  display: flex;
+  justify-content: space-between;
+  background: var(--color3);
+  padding: 10px;
+  border-radius: 10px;
+}
+.secondSection .secondSectionLeft {
+  width: 33%;
+}
+
+.secondSectionLeft ul {
+  padding: 5px;
+}
+.secondSectionLeft ul li {
   text-align: center;
-  width: 150px;
-  height: 160px;
+  padding: 5px;
+  width: 130px;
+  margin: 5px 0;
+  border-radius: 8px;
+  background: var(--color4);
+  font-size: 0.8rem;
 }
-
-footer .foot-right-bottom {
-  grid-area: foot-div-image;
+.secondSectionRight {
+  width: 77%;
+}
+.secondSectionRight .investorsImage {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  padding: 20px;
 }
 
-footer .foot-left ul {
-  margin-top: 10px;
-}
-footer .foot-left ul li {
-  margin: 10px 0;
-  background: blue;
-  border: none;
-  border-radius: 8px;
-  padding: 8px;
-}
-footer .foot-right-bottom img {
-  height: 60px;
-  margin: 0 auto;
+.secondSectionRight .investorsImage img {
+  height: 50px;
+  margin-left: -100px;
 }
 
-@keyframes animation-right {
-  0% {
-    transform: scale(1.1);
-  }
-  50% {
-    transform: scale(1.3);
-  }
-  100% {
-    transform: scale(1.1);
-  }
+.mousemove {
+  position: absolute;
+  border-radius: 2000px;
+  mix-blend-mode: difference;
+
+  transform: translate(-50%, -50%);
+}
+#cursor {
+  height: 15px;
+  width: 15px;
+  border-radius: 30px;
+  background: var(--color4);
+}
+#mousemove1 {
+  height: 100px;
+  width: 100px;
+  background: var(--color1);
+  transition: 0.15s ease-out;
+}
+#mousemove2 {
+  height: 200px;
+  width: 200px;
+  background: var(--color2);
+  transition: 0.2s ease-out;
 }
