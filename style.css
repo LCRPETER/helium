@@ -21,19 +21,17 @@ body {
   padding: 10px;
   min-height: 100vh;
   user-select: none;
-  cursor: none;
+  /* cursor: none; */
 }
 p {
   font-size: 0.9rem;
 }
-
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
 }
-
 nav ul {
   display: flex;
   justify-content: space-around;
@@ -67,6 +65,7 @@ a:hover {
   width: 100%;
 }
 .firstSectionLeft .firstSectionLeftChild h1 {
+  width: 80%;
   font-size: 5rem;
 }
 .firstSectionLeft .firstSectionLeftChild h3 {
@@ -77,21 +76,16 @@ a:hover {
   padding: 10px;
   width: 50%;
 }
-
 .firstSection .firstSectionRight img {
   width: 100%;
 }
 .secondSection {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 33% 67%;
   background: var(--color3);
   padding: 10px;
   border-radius: 10px;
 }
-.secondSection .secondSectionLeft {
-  width: 33%;
-}
-
 .secondSectionLeft ul {
   padding: 5px;
 }
@@ -104,25 +98,21 @@ a:hover {
   background: var(--color4);
   font-size: 0.8rem;
 }
-.secondSectionRight {
-  width: 77%;
-}
 .secondSectionRight .investorsImage {
   display: flex;
   justify-content: space-around;
   padding: 20px;
 }
-
 .secondSectionRight .investorsImage img {
   height: 50px;
   margin-left: -100px;
 }
-
 .mousemove {
   position: absolute;
   border-radius: 2000px;
   mix-blend-mode: difference;
-
+  top: 100%;
+  left: 100px;
   transform: translate(-50%, -50%);
 }
 #cursor {
@@ -135,11 +125,52 @@ a:hover {
   height: 100px;
   width: 100px;
   background: var(--color1);
-  transition: 0.15s ease-out;
+  transition: all 300ms ease-out;
 }
 #mousemove2 {
   height: 200px;
   width: 200px;
   background: var(--color2);
-  transition: 0.2s ease-out;
+  transition: all 600ms ease-out;
+}
+
+@media screen and (max-width: 870px) {
+  .firstSectionLeft .firstSectionLeftChild h1 {
+    font-size: 3rem;
+  }
+  .firstSectionLeft .firstSectionLeftChild h3 {
+    font-size: 1.1rem;
+  }
+  p {
+    font-size: 0.7rem;
+  }
+  .secondSectionRight .investorsImage img {
+    height: 40px;
+    margin-left: 0;
+  }
+
+  * {
+    border: 1px solid var(--color4);
+  }
+}
+/* ########### MEDIA QUERIES ########## */
+@media screen and (max-width: 640px) {
+  .firstSection {
+    display: block;
+  }
+  .firstSection .firstSectionLeft,
+  .firstSection .firstSectionRight {
+    margin: 0 auto;
+    width: 100%;
+  }
+  p {
+    font-size: 0.7rem;
+  }
+  .secondSection {
+    display: block;
+    text-align: center;
+  }
+  .secondSectionLeft ul li {
+    margin: 5px auto;
+  }
 }
